@@ -27,7 +27,27 @@ class _SlotMachineState
   var _slot2 = _lemon;
   var _slot3 = _seven;
   var _message = '';
+  void _reset() {
+  setState(() {
+    _coins = 10;
+    _slot1 = _cherry;
+    _slot2 = _lemon;
+    _slot3 = _seven;
+    _message = '';
+  });
+}
   void _spin() {
+    if (_coins <= 0) {
+      setState(() {
+      _message = 'Монеты закончились! 😢';
+      });
+      return;
+    }else {
+      _coins -= 1;
+      _message = _coins == 1
+        ? 'Монеты закончились!😢'
+        : 'Попробуй ещё раз 😔 -1 монета';
+    }
     setState(() {
       _slot1 =
           _symbols[_random.nextInt(
@@ -102,7 +122,7 @@ class _SlotMachineState
         ),
         const SizedBox(height: 40),
         ElevatedButton(
-          onPressed: _spin,
+          onPressed: _coins > 0 ? _spin : null,
           style: ElevatedButton.styleFrom(
             backgroundColor: Colors.amberAccent,
             padding: const EdgeInsets.symmetric(
@@ -119,6 +139,17 @@ class _SlotMachineState
             ),
           ),
         ),
+        const SizedBox(height: 12),
+        TextButton(
+          onPressed: _reset,
+          child: const Text(
+            'Начать заново',
+            style:  TextStyle(
+              color:  Colors.white70,
+              fontSize: 16,
+            ),
+          )
+        )
       ],
     );
   }
