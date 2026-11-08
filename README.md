@@ -1,17 +1,24 @@
-# slot_machine_barakov
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# Лабораторная работа №9. Flutter: StatefulWidget и управление состоянием  
+**ФИО** Бараков Олег Юрьевич  
+**Группа** ИСП-241  
+**Дата** 08.11.2026  
+## Что изучили
+- изучил разницу между StatelessWidget и StatefulWidget  
+- научился управлять состоянием приложения через setState()  
+- подключил локальные изображения и обрабатывал нажатия кнопок  
+## Скриншот финального приложения
+![](/img/step4_barakov.png)  
+## Инструкция по запуску
+1. Клонируйте репозиторий и перейдите в папку проекта:
+```bash
+git clone https://github.com/0lba/Flutter_Lab9
+cd slot_machine_barakov
+```
+2. Установите зависимости:
+```bash
+flutter pub get
+```
+3. Запустите приложение в браузере Chrome:
+```bash
+flutter run -d chrome
+```
